@@ -98,4 +98,4 @@ def calculate_lpips_given_images(group_of_images):
         lpips_value = torch.mean(torch.stack(lpips_values, dim=0))
         return lpips_value.item()
     else:
-        return torch.zeros(1)
+        return 0.0
