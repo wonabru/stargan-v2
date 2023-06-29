@@ -77,8 +77,11 @@ def calculate_metrics(nets, args, step, mode):
                         try:
                             x_ref = next(iter_ref).to(device)
                         except:
-                            iter_ref = iter(loader_ref)
-                            x_ref = next(iter_ref).to(device)
+                            try:
+                                iter_ref = iter(loader_ref)
+                                x_ref = next(iter_ref).to(device)
+                            except:
+                                continue
 
                         if x_ref.size(0) > N:
                             x_ref = x_ref[:N]
