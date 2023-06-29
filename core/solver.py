@@ -8,7 +8,7 @@ http://creativecommons.org/licenses/by-nc/4.0/ or send a letter to
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 """
 import sys
-sys.path.append('./starganv2')
+sys.path.append(os.path.expanduser('/content/starganv2'))
 import os
 from os.path import join as ospj
 import time
