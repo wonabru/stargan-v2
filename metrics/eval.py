@@ -67,7 +67,8 @@ def calculate_metrics(nets, args, step, mode):
 
                 # generate 10 outputs from the same input
                 group_of_images = []
-                iter_ref = iter(loader_ref)
+                if mode == 'reference':
+                    iter_ref = iter(loader_ref)
                 for j in range(args.num_outs_per_domain):
                     if mode == 'latent':
                         z_trg = torch.randn(N, args.latent_dim).to(device)
